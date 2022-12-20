@@ -132,10 +132,10 @@ async function SellResources(resource)
             }
             //Rákattint az ajánlatok keresésére
             await document.getElementsByClassName('gp_tab_page js-page js-page-1 game_body active')[0].getElementsByClassName('button_container')[0].getElementsByClassName('button_new btn_find_rates')[0].click();
-            await sleep(250);
+            await sleep(50);
             //Rákattint az elfogadás gombra
             await document.getElementsByClassName('confirm_order')[0].getElementsByClassName('button_container')[0].getElementsByClassName('button_new btn_confirm')[0].click();
-            await sleep(500);
+            await sleep(100);
             var captcha = await document.getElementById('recaptcha_window');
             if(typeof(captcha) != 'undefined' && captcha != null && isTrue(GM_config.get('TozsdeBot_CaptchaDetection'))) player.play();
             while(typeof(captcha) != 'undefined' && captcha != null)
